@@ -12,7 +12,7 @@ function Get-sbExoPrimaryEmail {
         try {
             $mailboxes = Get-Mailbox -Identity $Identity -ErrorAction SilentlyContinue
         } catch {
-            throw 'Please connect to Exchange Online using Connect-ExopsSession prior to running this command.'
+            throw 'Please connect to Exchange Online using Connect-ExchangeOnline prior to running this command.'
         }
         foreach ($mailbox in $mailboxes) {
             $emailaddresses = $mailbox.EmailAddresses
